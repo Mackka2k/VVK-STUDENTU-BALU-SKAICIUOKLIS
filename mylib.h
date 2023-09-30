@@ -5,6 +5,10 @@
 #include <vector>
 #include <iomanip>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime> 
+#include <fstream>
+#include <sstream>
 
 using std::string;
 using std::cout;
@@ -19,6 +23,13 @@ using std::fixed;
 using std::setprecision;
 using std::sort;
 using std::domain_error;
+using std::stringstream;
+using std::ifstream;
+using std::ofstream;
+using std::getline;
+using std::istream;
+using std::ostream;
+using std::istringstream;
 
 extern char skaiciavimo_Strategija;
 extern string failoVardas;
@@ -34,22 +45,19 @@ public:
 	studentas(const studentas& temp);					 // [KOPIJAVIMO KONSTRUKTORIUS]
 	studentas& operator=(const studentas& temp);		 // [PRISKIRIMO KOPIJAVIMO OPERATORIUS]
 	~studentas();										 // [DESTRUKTORIUS]
-	
+
 	inline string getVardas() { return vard; }			 // [GETTER]
-	inline int getPazNr() { return paz.size(); }	     // [GETTER]
-	
+	inline size_t getPazNr() { return paz.size(); }	     // [GETTER]
+
 	inline void setVardas(string t) { vard = t; }        // [SETTER]
 
-	void printas();
-	void printasRez();
-	void rezVid(); // [METODAS SKAIÈIUOJANTIS GALUTINÁ PAÞYMÁ PAGAL VIDURKÁ]
-	void rezMed(); // [METODAS SKAIÈIUOJANTIS GALUTINÁ PAÞYMÁ PAGAL MEDIANÀ]
+	void printas();    // [IÐVEDA STUDENTO DUOMENIS]
+	void printasRez(); // [IÐVEDA GALUTINÁ PAÞYMÁ DVIEJU SKAICIU PO KABLELIO TIKSLUMU]
+	void rezVid();     // [METODAS SKAIÈIUOJANTIS GALUTINÁ PAÞYMÁ PAGAL VIDURKÁ]
+	void rezMed();     // [METODAS SKAIÈIUOJANTIS GALUTINÁ PAÞYMÁ PAGAL MEDIANÀ]
 
-	//Duomenø ávedimo metodas(perdengtas cin)
-	//Duomenø iðvedimo metodas(perdengtas cout)
 	double mediana(vector<int> vec);    // [FUNKCIJA SKAIÈIUOJANTI MEDIANÀ]
-	
+
 	void operator>>(std::istream& input);  // [PERDENGIA CIN OPERATORIØ]
-	void operator<<(std::ostream& out); // [PERDENGIA COUT OPERATORIØ]
-	//double galBalas(double egzaminas, const vector<double>& nd, double (*kriterijus)(vector<double>) = mediana);
+	void operator<<(std::ostream& output); // [PERDENGIA COUT OPERATORIØ]
 };
