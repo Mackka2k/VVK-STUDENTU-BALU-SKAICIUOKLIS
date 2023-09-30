@@ -7,8 +7,6 @@
 #include <algorithm>
 #include <cstdlib>
 #include <ctime> 
-#include <fstream>
-#include <sstream>
 
 using std::string;
 using std::cout;
@@ -23,13 +21,6 @@ using std::fixed;
 using std::setprecision;
 using std::sort;
 using std::domain_error;
-using std::stringstream;
-using std::ifstream;
-using std::ofstream;
-using std::getline;
-using std::istream;
-using std::ostream;
-using std::istringstream;
 
 extern char skaiciavimo_Strategija;
 extern string failoVardas;
@@ -45,10 +36,10 @@ public:
 	studentas(const studentas& temp);					 // [KOPIJAVIMO KONSTRUKTORIUS]
 	studentas& operator=(const studentas& temp);		 // [PRISKIRIMO KOPIJAVIMO OPERATORIUS]
 	~studentas();										 // [DESTRUKTORIUS]
-
+	
 	inline string getVardas() { return vard; }			 // [GETTER]
 	inline size_t getPazNr() { return paz.size(); }	     // [GETTER]
-
+	
 	inline void setVardas(string t) { vard = t; }        // [SETTER]
 
 	void printas();    // [IÐVEDA STUDENTO DUOMENIS]
@@ -57,7 +48,7 @@ public:
 	void rezMed();     // [METODAS SKAIÈIUOJANTIS GALUTINÁ PAÞYMÁ PAGAL MEDIANÀ]
 
 	double mediana(vector<int> vec);    // [FUNKCIJA SKAIÈIUOJANTI MEDIANÀ]
-
+	
 	void operator>>(std::istream& input);  // [PERDENGIA CIN OPERATORIØ]
 	void operator<<(std::ostream& output); // [PERDENGIA COUT OPERATORIØ]
 };
