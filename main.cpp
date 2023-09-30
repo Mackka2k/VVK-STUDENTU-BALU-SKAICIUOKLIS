@@ -5,12 +5,16 @@ int main() {
 	cin >> skaiciavimo_Strategija;
 
 	vector<studentas> grupe;
-	for (int i = 0; i < 1; i++) {
+	int studentCount;
+	cout << "Kiek studentu bus ivesta? ";
+	cin >> studentCount;
+
+	for (int i = 0; i < studentCount; i++) {
 		studentas K;
 		grupe.push_back(K);
-		K.~studentas();
 	}
-	cout << endl << grupe.size() << endl;
+	cout << endl << grupe.size() << " studentai ivesti." << endl;
+
 	printf("|%-10s|%-20s|", "[Vardas]", "[Pavarde]");
 	for (int i = 0; i < grupe[0].getPazNr(); i++) 
 		printf("%s%d|", "ND", i + 1);

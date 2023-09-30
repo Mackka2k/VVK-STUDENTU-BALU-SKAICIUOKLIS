@@ -1,52 +1,60 @@
 #include "mylib.h"
 
 studentas::studentas() {
+	srand(time(0)); // [SEEDAS RANDOM GENERATORIUI]
+
 	cout << "Iveskite studento varda: "; cin >> vard;
 	cout << "Iveskite studento pavarde: "; cin >> pav;
+
 	cout << "Kiek pazymiu buvo semestre? "; 
 	int n; cin >> n;
+
+	paz.resize(n); 
+	
 	for (int i = 0; i < n; i++) {
-		int k;
-		cout << "Ivesk " << i + 1 << " semestro pazymi: "; cin >> k; paz.push_back(k);
+		int k = rand() % 10 + 1; // [RANDOM PAZIMYS NUO 1 IKI 10]
+		paz[i] = k;
 	}
-	cout << "Iveskite egzamino pazymi: "; cin >> egz;
-	skaiciavimo_Strategija == 'm' ? rezMed() : rezVid(); // 'm' - mediana, 'v' - vidurkis
+
+	egz = rand() % 10 + 1; // [RANDOM EGZAMINO PAZIMYS NUO 1 IKI 10]
+
+	skaiciavimo_Strategija == 'm' ? rezMed() : rezVid(); // ['m' - MEDIANA, 'v' - VIDURKIS]
 }
 
-studentas::studentas(string v, string p, vector<int> pp, int e) // 4. constructor with parameters
+studentas::studentas(string v, string p, vector<int> pp, int e) 
 {
 	vard = v; pav = p; paz = pp; egz = e;
 	skaiciavimo_Strategija == 'm' ? rezMed() : rezVid();
 }
-studentas::studentas(const studentas& temp) // 1. copy constructor
+studentas::studentas(const studentas& temp) 
 { 
 	vard = temp.vard; pav = temp.pav; 
 	paz = temp.paz; egz = temp.egz;
 	skaiciavimo_Strategija == 'm' ? rezMed() : rezVid();
 }
-studentas& studentas:: operator=(const studentas& temp) // 2. copy assignment operator 
-{ 
+studentas& studentas:: operator=(const studentas& temp) 
+{
 	if (this == &temp) return *this;
 	vard = temp.vard; pav = temp.pav; 
 	paz = temp.paz; egz = temp.egz;
 	skaiciavimo_Strategija == 'm' ? rezMed() : rezVid();
 	return *this;
 }
-studentas::~studentas() // 3. destructor
+studentas::~studentas() 
 { 
 	vard.clear(); pav.clear(); paz.clear(); 
 	egz = 0; rez = 0;
 }
 
-void studentas::printas(){
+void studentas::printas(){ 
 	printf("|%-10s|%20s|", vard.c_str(), pav.c_str());
 	for (auto& a : paz) printf("%3d|", a);
 	printf("%10d|\n", egz);
 }
 
-void studentas::printasRez() { // [METODAS IÐVEDANTIS STUDENTO DUOMENIS]
+void studentas::printasRez() { 
 	printf("|%-10s|%20s|", vard.c_str(), pav.c_str());
-	printf("%10.2f|\n", rez); // [IÐVEDA GALUTINÁ PAÞYMÁ DVIEJU SKAICIU PO KABLELIO TIKSLUMU]
+	printf("%10.2f|\n", rez);
 }
 
 void studentas::rezVid() {
@@ -67,11 +75,11 @@ double studentas::mediana(vector<int> vec) {
 		throw std::domain_error("negalima skaiciuoti medianos tusciam vektoriui");
 	sort(vec.begin(), vec.end());
 	vecSize vid = size / 2;
-	return size % 2 == 0 ? (vec[vid] + vec[vid - 1]) / 2 : vec[vid]/1.0;
+	return size % 2 == 0 ? (vec[vid] + vec[vid - 1]) / 2 : vec[vid] / 1.0;
 }
 
 
-void studentas::operator>>(std::istream& input) { // [PERDENGTAS CIN]
+void studentas::operator>>(std::istream& input) { 
 	cout << "Iveskite studento varda: "; input >> vard;
 	cout << "Iveskite studento pavarde: "; input >> pav;
 	cout << "Kiek pazymiu buvo semestre? ";
@@ -85,7 +93,7 @@ void studentas::operator>>(std::istream& input) { // [PERDENGTAS CIN]
 }
 
 
-void studentas::operator<<(std::ostream& output) { // [PERDENGTAS COUT]
+void studentas::operator<<(std::ostream& output) { 
 	output << "Vardas: " << vard << endl;
 	output << "Pavarde: " << pav << endl;
 	output << "Pazymiai: ";
@@ -94,13 +102,4 @@ void studentas::operator<<(std::ostream& output) { // [PERDENGTAS COUT]
 	output << "Egzamino pazymys: " << egz << endl;
 	output << "Galutinis balas: " << fixed << setprecision(2) << rez << endl;
 }
-
-
-
-//double studentas::galBalas(double egzaminas, const vector<double>& nd,
-//	double (*kriterijus)(vector<double>) = studentas::mediana) {
-//	if (nd.size() == 0)
-//		throw std::domain_error("Studentas neturi pazymiu");
-//	return galBalas(egzaminas, kriterijus(nd));
-//};
 
