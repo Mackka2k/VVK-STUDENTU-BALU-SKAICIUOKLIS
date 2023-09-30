@@ -1,3 +1,4 @@
+// V0.1.2
 #include "mylib.h"
 char skaiciavimo_Strategija = 'v';
 int main() {
