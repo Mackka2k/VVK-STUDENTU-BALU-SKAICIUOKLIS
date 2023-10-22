@@ -9,8 +9,10 @@
 #include <ctime> 
 #include <fstream>
 #include <sstream>
+#include <chrono>
 
 using std::string;
+using std::to_string;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -31,6 +33,10 @@ using std::istream;
 using std::ostream;
 using std::istringstream;
 
+
+
+
+
 extern char skaiciavimo_Strategija;
 extern string failoVardas;
 
@@ -48,6 +54,11 @@ public:
 
 	inline string getVardas() { return vard; }			 // [GETTER]
 	inline size_t getPazNr() { return paz.size(); }	     // [GETTER]
+	inline float getGal() { return rez; }			     // [GETTER]
+	string getPavarde() const; 						     // [GETTER]
+	int getND(int indeksas) const; 	                     // [GETTER]
+	int getEgzaminas() const;                            // [GETTER]
+	int getRezultatas() const;                           // [GETTER]
 
 	inline void setVardas(string t) { vard = t; }        // [SETTER]
 
@@ -58,6 +69,9 @@ public:
 
 	double mediana(vector<int> vec);    // [FUNKCIJA SKAIÈIUOJANTI MEDIANÀ]
 
-	void operator>>(std::istream& input);  // [PERDENGIA CIN OPERATORIØ]
+	
 	void operator<<(std::ostream& output); // [PERDENGIA COUT OPERATORIØ]
+	void operator>>(std::istream& input);  // [PERDENGIA CIN OPERATORIØ]
+
+
 };
