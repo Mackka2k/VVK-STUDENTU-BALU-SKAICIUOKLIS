@@ -103,3 +103,27 @@ void studentas::operator<<(std::ostream& output) {
 	output << "Egzamino pazymys: " << egz << endl;
 	output << "Galutinis balas: " << fixed << setprecision(2) << rez << endl;
 }
+
+string studentas::getPavarde() const { // grazina pavarde
+	return pav;
+}
+
+int studentas::getND(int indeksas) const { // grazina nd pagal indeksa
+	if (indeksas >= 0 && indeksas < paz.size()) {
+		return paz[indeksas];
+	}
+	else {
+		return -1;
+	}
+}
+
+int studentas::getEgzaminas() const {
+	return egz;
+}
+
+int studentas::getRezultatas() const
+{
+	return rez;
+}
+
+
