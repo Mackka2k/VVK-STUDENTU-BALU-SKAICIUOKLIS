@@ -1,77 +1,80 @@
-#include <iostream>
-#include <numeric>
-#include <string>
-#include <array>
-#include <vector>
-#include <iomanip>
 #include <algorithm>
-#include <cstdlib>
-#include <ctime> 
-#include <fstream>
-#include <sstream>
+#include <array>
 #include <chrono>
+#include <cstdlib>
+#include <ctime>
+#include <deque>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <list>
+#include <numeric>
+#include <sstream>
+#include <string>
+#include <vector>
 
-using std::string;
-using std::to_string;
-using std::cout;
-using std::cin;
-using std::endl;
+using std::accumulate;
 using std::array;
-using std::vector;
-using std::setw;
-using std::left;
-using std::right;
-using std::fixed;
-using std::setprecision;
-using std::sort;
+using std::cerr;
+using std::cin;
+using std::cout;
+using std::deque;
 using std::domain_error;
-using std::stringstream;
-using std::ifstream;
-using std::ofstream;
+using std::endl;
+using std::fixed;
 using std::getline;
+using std::ifstream;
 using std::istream;
-using std::ostream;
 using std::istringstream;
-
-
-
-
+using std::left;
+using std::list;
+using std::ofstream;
+using std::ostream;
+using std::right;
+using std::setprecision;
+using std::setw;
+using std::sort;
+using std::string;
+using std::stringstream;
+using std::to_string;
+using std::vector;
 
 extern char skaiciavimo_Strategija;
 extern string failoVardas;
 
 class studentas {
-	string vard, pav; // [SAUGO STUDENTO VARDA IR PAVARDE]
-	vector<int> paz;  // [SAUGO NAMÿ DARBU REZULTATUS]
-	int egz;		  // [SAUGO EGZAMINO REZULTAT¿]
-	float rez;		  // [SAUGO GALUTIN¡ REZULTAT¿]
+  string vard, pav; // [SAUGO STUDENTO VARDA IR PAVARDE]
+  vector<int> paz;  // [SAUGO NAM√ò DARBU REZULTATUS]
+  int egz;          // [SAUGO EGZAMINO REZULTAT√Ä]
+  float rez;        // [SAUGO GALUTIN√Å REZULTAT√Ä]
 public:
-	studentas();                                         // [DEFAULT KONSTRUKTORIUS]
-	studentas(string v, string p, vector<int>pp, int e); // [KONSTRUKTORIUS SU PARAMETRAIS]
-	studentas(const studentas& temp);					 // [KOPIJAVIMO KONSTRUKTORIUS]
-	studentas& operator=(const studentas& temp);		 // [PRISKIRIMO KOPIJAVIMO OPERATORIUS]
-	~studentas();										 // [DESTRUKTORIUS]
+  studentas(); // [DEFAULT KONSTRUKTORIUS]
+  studentas(string v, string p, vector<int> pp,
+            int e);                 // [KONSTRUKTORIUS SU PARAMETRAIS]
+  studentas(const studentas &temp); // [KOPIJAVIMO KONSTRUKTORIUS]
+  studentas &
+  operator=(const studentas &temp); // [PRISKIRIMO KOPIJAVIMO OPERATORIUS]
+  ~studentas();                     // [DESTRUKTORIUS]
 
-	inline string getVardas() { return vard; }			 // [GETTER]
-	inline size_t getPazNr() { return paz.size(); }	     // [GETTER]
-	inline float getGal() { return rez; }			     // [GETTER]
-	string getPavarde() const; 						     // [GETTER]
-	int getND(int indeksas) const; 	                     // [GETTER]
-	int getEgzaminas() const;                            // [GETTER]
-	int getRezultatas() const;                           // [GETTER]
+  inline string getVardas() { return vard; }            // [GETTER]
+  inline size_t getPazNr() { return paz.size(); }       // [GETTER]
+  inline float getGal() { return rez; }                 // [GETTER]
+  string getPavarde() const;                            // [GETTER]
+  int getND(int indeksas) const;                        // [GETTER]
+  int getEgzaminas() const;                             // [GETTER]
+  int getRezultatas() const;                            // [GETTER]
+  inline size_t getPazNr() const { return paz.size(); } // [GETTER]
 
-	inline void setVardas(string t) { vard = t; }        // [SETTER]
+  inline void setVardas(string t) { vard = t; } // [SETTER]
 
-	void printas();    // [I–VEDA STUDENTO DUOMENIS]
-	void printasRez(); // [I–VEDA GALUTIN¡ PAﬁYM¡ DVIEJU SKAICIU PO KABLELIO TIKSLUMU]
-	void rezVid();     // [METODAS SKAI»IUOJANTIS GALUTIN¡ PAﬁYM¡ PAGAL VIDURK¡]
-	void rezMed();     // [METODAS SKAI»IUOJANTIS GALUTIN¡ PAﬁYM¡ PAGAL MEDIAN¿]
+  void printas(); // [I√êVEDA STUDENTO DUOMENIS]
+  void
+  printasRez(); // [I√êVEDA GALUTIN√Å PA√ûYM√Å DVIEJU SKAICIU PO KABLELIO TIKSLUMU]
+  void rezVid(); // [METODAS SKAI√àIUOJANTIS GALUTIN√Å PA√ûYM√Å PAGAL VIDURK√Å]
+  void rezMed(); // [METODAS SKAI√àIUOJANTIS GALUTIN√Å PA√ûYM√Å PAGAL MEDIAN√Ä]
 
-	double mediana(vector<int> vec);    // [FUNKCIJA SKAI»IUOJANTI MEDIAN¿]
+  double mediana(vector<int> vec); // [FUNKCIJA SKAI√àIUOJANTI MEDIAN√Ä]
 
-	
-	void operator<<(std::ostream& output); // [PERDENGIA COUT OPERATORIÿ]
-	void operator>>(std::istream& input);  // [PERDENGIA CIN OPERATORIÿ]
-
-
+  void operator<<(std::ostream &output); // [PERDENGIA COUT OPERATORI√ò]
+  void operator>>(std::istream &input);  // [PERDENGIA CIN OPERATORI√ò]
 };
