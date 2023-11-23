@@ -20,6 +20,7 @@ Programa gali matuoti ir parodyti, kiek laiko užtruko tam tikri veiksmai.
 
 [ATSISIUNTIMAS](https://github.com/Mackka2k/VVK-STUDENTU-BALU-SKAICIUOKLIS/releases/download/V1.0.0/VVK-STUDENTU-BALU-SKAICIUOKLIS-1.0.0.exe)
 
-* Paleiskite programa per administatorių.
+  1. Norint paleisti programą leiskite per #🔴compile_project.bat🔴#.
+  2. Programa leiskite per administratorių.
 
 
