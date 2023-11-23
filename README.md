@@ -17,8 +17,8 @@ Programa gali matuoti ir parodyti, kiek laiko užtruko tam tikri veiksmai.
 
 # 🔓 ĮDIEGIMO INTRUKCIJA 🔓
 
-[ATSISIUNTIMAS]:
-[DOWNLOAD](https://github.com/Mackka2k/VVK-STUDENTU-BALU-SKAICIUOKLIS/releases/download/V1.0.0/1_PAVYZDYS.7z)
+
+[ATSISIUNTIMAS](https://github.com/Mackka2k/VVK-STUDENTU-BALU-SKAICIUOKLIS/releases/download/V1.0.0/1_PAVYZDYS.7z)
 
 * Paleiskite programa per administatorių.
 
