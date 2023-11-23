@@ -12,6 +12,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 using std::accumulate;
 using std::array;
