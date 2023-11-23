@@ -1,7 +1,7 @@
-# VVK-STUDENTU-BALU-SKAIČIUOKLIS
+# 🛑 VVK-STUDENTU-BALU-SKAIČIUOKLIS 🛑
 Studentų balų skaičiuoklis – tai programa, kuri leidžia vartotojui įvesti studentų vardus, pavardes, namų darbų rezultatus ir egzamino rezultatą, ir pagal tai skaičiuoja galutinį studento balą.
 
-# NAUDOJIMOSI INSTRUKCIJA
+# 📜 NAUDOJIMOSI INSTRUKCIJA 📜
 
 [Duomenų įvedimas]:
 Įveskite studentų vardus, pavardes ir jų pažymius.
@@ -14,3 +14,12 @@ Programa išsaugo studentus, suskirstytus pagal jų galutinį balą, į atskirus
 
 [Papildoma informacija]:
 Programa gali matuoti ir parodyti, kiek laiko užtruko tam tikri veiksmai.
+
+# 🔓 ĮDIEGIMO INTRUKCIJA 🔓
+
+[ATSISIUNTIMAS]:
+(DOWNLOAD)
+
+* Paleiskite programa per administatorių.
+
+
