@@ -3,14 +3,14 @@ Studentų balų skaičiuoklis – tai programa, kuri leidžia vartotojui įvesti
 
 # NAUDOJIMOSI INSTRUKCIJA
 
-[Duomenų įvedimas]:
+* [Duomenų įvedimas]:
 Įveskite studentų vardus, pavardes ir jų pažymius.
 
-[Duomenų apdorojimas]:
+* [Duomenų apdorojimas]:
 Pasirinkite norimą galutinio balo skaičiavimo metodą (vidurkį ar medianą).
 
-[Duomenų išsaugojimas]:
+* [Duomenų išsaugojimas]:
 Programa išsaugo studentus, suskirstytus pagal jų galutinį balą, į atskirus failus.
 
-[Papildoma informacija]:
+* [Papildoma informacija]:
 Programa gali matuoti ir parodyti, kiek laiko užtruko tam tikri veiksmai.
